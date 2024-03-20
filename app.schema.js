@@ -14,7 +14,8 @@ const userSchema = new mongoose.Schema({
   },
   friends: [{ type: mongoose.Schema.Types.ObjectId, ref: 'User' }],
   posts: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Post' }],
-}, { timestamps: true });
+}, 
+ { timestamps: true });
 
 // Define the Post schema
 const postSchema = new mongoose.Schema({
@@ -27,20 +28,23 @@ const postSchema = new mongoose.Schema({
     content: { type: String, required: true },
     createdAt: { type: Date, default: Date.now },
   }],
-}, { timestamps: true });
+}, 
+{ timestamps: true });
 
 // Define the Comment schema
 const commentSchema = new mongoose.Schema({
   postId: { type: mongoose.Schema.Types.ObjectId, ref: 'Post', required: true },
   userId: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true },
   content: { type: String, required: true },
-}, { timestamps: true });
+}, 
+{ timestamps: true });
 
 // Define the Like schema
 const likeSchema = new mongoose.Schema({
   postId: { type: mongoose.Schema.Types.ObjectId, ref: 'Post', required: true },
   userId: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true },
-}, { timestamps: true });
+}, 
+{ timestamps: true });
 
 // Create and export the models
 const User = mongoose.model('User', userSchema);
