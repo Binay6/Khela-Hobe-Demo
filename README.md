@@ -1,1 +1,2 @@
-hi bkbcvr  kcbkbc bcjbck
+Hi , This is a sports social media app.
+
